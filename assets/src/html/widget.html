@@ -1,30 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Learning Variables</title>
 
-<head>
-  <!-- Metadata -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page Title</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap"
-    rel="stylesheet">
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="../css/widget-page.css" />
+    <link rel="stylesheet" href="../css/variable-widget.css" />
+  </head>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="../css/widget-page.css">
-</head>
+  <body id="widget-page">
+    <div class="column column-md">
+      <!-- SECTION 1 -->
+      <section>
+        <div class="text">
+          <h1>What is a Variable?</h1>
+          <p>
+            A variable is like a box that stores a value. You can change that
+            value anytime!
+          </p>
+        </div>
 
-<body>
-  <script type="module">
-    import { WidgetPage } from "../js/WidgetPage.js";
+        <button class="button-semantic button-primary button-continue">
+          <span class="button-text">Continue</span>
+        </button>
+      </section>
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const widgetPage = new WidgetPage("widget-page-template", document.body);
-    });
-  </script>
-</body>
+      <!-- SECTION 2 -->
+      <section>
+        <div class="text">
+          <h2>Try It Yourself!</h2>
+          <p>
+            Type a value and click <strong>Store Value</strong> to save it in
+            your variable. Try changing it!
+          </p>
+        </div>
 
+        <!-- Widget container -->
+        <div class="widget variable-widget"></div>
+
+        <button class="button-semantic button-primary button-continue">
+          <span class="button-text">Continue</span>
+        </button>
+      </section>
+
+      <!-- SECTION 3 -->
+      <section>
+        <div class="text">
+          <h2>You Did It!</h2>
+          <p>
+            That's how variables work! Programmers use them to store and update
+            values in their code.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <script type="module">
+      import { WidgetPage } from "../js/WidgetPage.js";
+      import { VariableWidget } from "../js/VariableWidget.js";
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const widgetPage = new WidgetPage("widget-page", document.body);
+        widgetPage.registerWidget(".variable-widget", VariableWidget);
+      });
+    </script>
+  </body>
 </html>
